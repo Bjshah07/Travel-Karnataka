@@ -143,7 +143,7 @@ const AddDestination = () => {
       // Get token from localStorage (assuming it's stored there)
       const token = localStorage.getItem('adminToken');
 
-      const url = editMode ? `http://localhost:4000/admin/destinations/${destination._id}` : 'http://localhost:4000/admin/destinations';
+      const url = editMode ? `${import.meta.env.VITE_BACKEND_BASEURL}/admin/destinations/${destination._id}` : `${import.meta.env.VITE_BACKEND_BASEURL}/admin/destinations`;
       const method = editMode ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
