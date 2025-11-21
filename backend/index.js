@@ -11,7 +11,7 @@ import { v2 as cloudinary } from 'cloudinary';
 // 3️⃣ Initialize Express app
 const app = express();
 
-dotenv.config({ quiet: true }); 
+dotenv.config({ quiet: true });
 
 // Configure Cloudinary
 cloudinary.config({
@@ -21,7 +21,13 @@ cloudinary.config({
 });
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175','https://travel-karnataka.onrender.com'],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:5175',
+    'https://travel-karnataka.onrender.com',
+    'https://travel-karnataka-admin.onrender.com'
+  ],
   credentials: true
 }));
 app.use(express.urlencoded({ extended: true }));

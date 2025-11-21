@@ -17,7 +17,7 @@ const ProtectedRoute = lazy(() => import("./Components/ProtectedRoute"));
 const Destination = lazy(() => import("./pages/Destination"));
 const About = lazy(() => import("./pages/About"));
 const PackageDetails = lazy(() => import("./pages/PackageDetails"));
-const UserRequest = lazy(() => import("./pages/UserRequest"));
+const UserRequest = lazy(() => import("./pages/UserRequest")); 
 
 function App() {
   return (
@@ -30,13 +30,13 @@ function App() {
           <Route path="/signup" element={<Signup />} />
 
           {/* Protected Routes */}
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+          <Route path="/booking" element={<ProtectedRoute><Booking /></ProtectedRoute>} />
           <Route path="/booking-status" element={<ProtectedRoute><BookingStatus /></ProtectedRoute>} />
-          <Route path="/destination" element={<Destination />} />
-          <Route path="/package-details" element={<PackageDetails />} />
-          <Route path="/user-request" element={<UserRequest />} />
+          <Route path="/destination" element={<ProtectedRoute><Destination /></ProtectedRoute>} />
+          <Route path="/package-details" element={<ProtectedRoute><PackageDetails /></ProtectedRoute>} />
+          <Route path="/user-request" element={<ProtectedRoute><UserRequest /></ProtectedRoute>} />
           <Route path="*" element={<Lottie animationData={ERROR} loop={true} autoplay={true} className="w-screen h-screen bg-orange-400/40" />} />
         </Routes>
       </Suspense>

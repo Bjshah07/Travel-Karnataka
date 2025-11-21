@@ -62,10 +62,10 @@ function Navbar() {
           {/* Logo */}
           {darkMode ?
             <Link to="/home" className="flex items-center space-x-3">
-              <img className="h-30 w-auto" src="/logo_white.png" alt="logo" />
+              <img className="h-23 w-auto" src="/favicon1.png" alt="logo" />
             </Link> :
             <Link to="/home" className="flex items-center space-x-3">
-              <img className="h-30 w-auto" src="/logo_black.png" alt="logo" />
+              <img className="h-22 w-auto" src="/favicon3.png" alt="logo" />
             </Link>}
 
           {/* Desktop Nav */}
